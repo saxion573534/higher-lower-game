@@ -6,6 +6,9 @@ public class Main {
     private boolean playGame = true;
     private Scanner scanner = new Scanner(System.in);
 
+    private final int MINIMUM_ANSWER = 1;
+    private final int MAXIMUM_ANSWER = 10;
+
     public static void main(String[] args) {
         Main main = new Main();
         main.runGameLoop();
@@ -23,7 +26,7 @@ public class Main {
                 "*************************************************");
 
         int turns = 1;
-        int answer = new Random().nextInt(1, 11); // 0 < x < 11
+        int answer = new Random().nextInt(MINIMUM_ANSWER, MAXIMUM_ANSWER + 1); // MINIMUM_ANSWER <= answer < MAXIMUM_ANSWER + 1
 
         int guess = getUserGuess();
         while (guess != answer) {
